@@ -1,0 +1,53 @@
+img {
+	width: 300px;
+	position: absolute;
+	left: 300px;
+	top: 150px;
+}
+
+p {
+	width: 150px;
+	border: 2px solid skyblue;
+	cursor: pointer;
+	line-height: 30px;
+	padding-left: 10px;
+	position: absolute;
+	left: 10px;
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

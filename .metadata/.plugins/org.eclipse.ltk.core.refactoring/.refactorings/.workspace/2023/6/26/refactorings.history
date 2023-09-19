@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;k20230626_1_register&apos;" deleteContents="false" description="Delete resource &apos;k20230626_1_register&apos;" element1="/k20230626_1_register" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1687758256613"/>&#x0A;<refactoring comment="Delete resource &apos;spaceplatform-master&apos;" deleteContents="true" description="Delete resource &apos;spaceplatform-master&apos;" element1="/spaceplatform-master" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1687934473525"/>
+</session>

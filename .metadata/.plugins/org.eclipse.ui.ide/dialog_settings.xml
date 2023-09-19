@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewWizardAction">
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="654"/>
+		<item key="DIALOG_Y_ORIGIN" value="341"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="ResourceNavigator">
+		<item key="ResourceViewer.STORE_SORT_TYPE" value="1"/>
+		<item key="ResourceWorkingSetFilter.STORE_WORKING_SET" value="Aggregate for window 1685155471973"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\k_digital\web2\workspace\spaceplatform-master"/>
+			<item value="C:\k_digital\web2\workspace\k20230524_1_jQuery"/>
+			<item value="C:\k_digital\web2\workspace\k20230515_1_javascript"/>
+			<item value="C:\k_digital\web2\workspace\k20230512_1_bootstrap"/>
+			<item value="C:\k_digital\web2\workspace\k20230508_1_css"/>
+			<item value="C:\k_digital\web2\workspace\k20230503_1_html"/>
+			<item value="C:\k_digital\web2\workspace\k20230502_1_calendar"/>
+			<item value="C:\k_digital\web2\workspace\k20230501_1_onLinePoll"/>
+			<item value="C:\k_digital\web2\workspace\k20230428_1_formTag"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+</section>

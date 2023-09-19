@@ -1,0 +1,47 @@
+body { /* 브라우저의 여백을 제거한다. */
+	margin: 0px;
+	padding: 0px;
+}
+
+#colorBox {
+	width: 300px;
+	height: 300px;
+	border: 1px solid tomato;
+	position: relative; /* 자기를 기준으로 */
+}
+
+#red, #blue, #yellow, #black {
+	width: 150px;
+	height: 150px;
+	border: 1px solid dodgerblue;
+	position: absolute; /* 부모를 기준으로 */
+}
+
+#blue {
+	left: 150px;
+}
+
+#yellow {
+	top: 150px;
+}
+
+
+#black {
+	left: 150px;
+	top: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

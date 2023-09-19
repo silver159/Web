@@ -1,0 +1,12 @@
+127.0.0.1 - - [11/Jul/2023:16:16:47 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [11/Jul/2023:16:16:49 +0900] "GET /k20230616_1_freeboard/list.jsp HTTP/1.1" 200 18009
+0:0:0:0:0:0:0:1 - - [11/Jul/2023:16:16:49 +0900] "GET /k20230616_1_freeboard/css/style.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Jul/2023:16:16:49 +0900] "GET /k20230616_1_freeboard/images/notice.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Jul/2023:16:16:49 +0900] "GET /k20230616_1_freeboard/images/hot.gif HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Jul/2023:16:16:49 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [11/Jul/2023:16:16:51 +0900] "GET /k20230616_1_freeboard/increment.jsp?idx=1061&currentPage=1 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [11/Jul/2023:16:16:51 +0900] "GET /k20230616_1_freeboard/selectByIdx.jsp?idx=1061&currentPage=1&job=contentView HTTP/1.1" 200 5949
+0:0:0:0:0:0:0:1 - - [11/Jul/2023:16:16:51 +0900] "GET /k20230616_1_freeboard/js/setting.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Jul/2023:16:16:54 +0900] "GET /k20230616_1_freeboard/selectByIdx.jsp?idx=1061&currentPage=1&job=update HTTP/1.1" 200 3981
+0:0:0:0:0:0:0:1 - - [11/Jul/2023:16:17:01 +0900] "GET /k20230616_1_freeboard/increment.jsp?idx=1050&currentPage=1 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [11/Jul/2023:16:17:01 +0900] "GET /k20230616_1_freeboard/selectByIdx.jsp?idx=1050&currentPage=1&job=contentView HTTP/1.1" 200 11016

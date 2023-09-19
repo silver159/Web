@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>멀티미디어</title>
+</head>
+<body>
+
+<!--  
+	<audio> 태그는 html 문서에 소리 컨텐츠를 포함시킬 때 사용한다.
+	src 속성은 컨텐츠가 저장된 경로나 컨텐츠의 url을 지정한다.
+	controls="controls" 속성은 제어 컨트롤러를 표시한다. 필수다!!!
+	autoplay="autoplay" 속성은 준비되면 바로 재생한다. <= 안된다.
+	loop="loop" 속성은 재생이 끝나면 처음부터 다시 재생한다. 무한 반복한다.
+	muted="muted" 속성은 음소거 상태로 표시된다.
+-->
+
+<audio src="./multimedia/audio.mp3" controls="controls"></audio>
+<audio src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" controls="controls"></audio>
+<audio src="./multimedia/audio.mp3" controls="controls" autoplay="autoplay"></audio>
+<audio src="./multimedia/audio.mp3" controls="controls" loop="loop"></audio>
+<audio src="./multimedia/audio.mp3" controls="controls" muted="muted"></audio>
+
+<!--  
+	<video> 태그는 html 문서에 영상 컨텐츠를 포함시킬 때 사용한다.
+	src 속성은 컨텐츠가 저장된 경로나 컨텐츠의 url을 지정한다.
+	controls="controls" 속성은 제어 컨트롤러를 표시한다. 필수다!!!
+	autoplay="autoplay" 속성은 준비되면 바로 재생한다.
+	=> 음소거 해야 autoplay 적용된다. autoplay시 controls="controls" 생략가능
+	loop="loop" 속성은 재생이 끝나면 처음부터 다시 재생한다. 무한 반복한다.
+	muted="muted" 속성은 음소거 상태로 표시된다.
+	width 속성은 영상의 너비를 지정한다.
+	height 속성은 영상의 높이를 지정한다.
+	width, height를 모두 사용하면 지정된 크기로 영상의 크기가 변경되고,
+	width, height 중 1개만 사용하면 나머지 1개는 변경된 비율에 맞게 자동으로 조절된다.
+	poster 속성은 동영상의 썸네일 이미지의 url을 지정한다.
+-->
+
+<video src="./multimedia/video.mp4" controls="controls"></video>
+<video src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" controls="controls"></video>
+<!-- autoplay 속성을 지정하려면 반드시 muted 속성을 같이 지정해야 한다. -->
+<video src="./multimedia/video.mp4" autoplay="autoplay" muted="muted"></video>
+<video src="./multimedia/video.mp4" autoplay="autoplay" muted="muted" width="200"></video>
+<video src="./multimedia/video.mp4" autoplay="autoplay" muted="muted" height="200"></video>
+<video src="./multimedia/video.mp4" controls="controls" muted="muted" 
+		width="500"	poster="./images/1.jpg"></video>
+		
+<iframe src="https://www.youtube.com/embed/eAwBg6-xaFE" 
+		controls="controls"
+		width="500"></iframe>
+<!--  
+https://www.youtube.com/watch?v=eAwBg6-xaFE&ab_channel=ExpressLogos
+watch?v= => embed/
+&뒤로 다 지운다.
+https://www.youtube.com/embed/eAwBg6-xaFE
+-->
+</body>
+</html>

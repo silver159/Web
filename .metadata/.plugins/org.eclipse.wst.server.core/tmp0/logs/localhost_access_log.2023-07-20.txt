@@ -1,0 +1,8 @@
+127.0.0.1 - - [20/Jul/2023:17:15:10 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [20/Jul/2023:17:15:11 +0900] "GET /k20230614_1_category/categoryView2.jsp HTTP/1.1" 200 1271
+0:0:0:0:0:0:0:1 - - [20/Jul/2023:17:15:11 +0900] "GET /k20230614_1_category/js/formCheck.js HTTP/1.1" 200 5323
+0:0:0:0:0:0:0:1 - - [20/Jul/2023:17:15:12 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [20/Jul/2023:17:37:13 +0900] "GET /k20230622_3_mvcBoard/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [20/Jul/2023:17:37:14 +0900] "GET /k20230622_3_mvcBoard/list.nhn HTTP/1.1" 200 9883
+0:0:0:0:0:0:0:1 - - [20/Jul/2023:17:37:20 +0900] "GET /k20230622_3_mvcBoard/increment.nhn?idx=712&currentPage=1 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [20/Jul/2023:17:37:20 +0900] "GET /k20230622_3_mvcBoard/contentView.nhn?idx=712&currentPage=1 HTTP/1.1" 200 1703

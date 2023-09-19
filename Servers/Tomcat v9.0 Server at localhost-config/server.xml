@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+--><!-- Note:  A "Server" is not itself a "Container", so you may not
+     define subcomponents such as "Valves" at this level.
+     Documentation at /docs/config/server.html
+ --><Server port="9005" shutdown="SHUTDOWN">
+  <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
+  <!-- Security listener. Documentation at /docs/config/listeners.html
+  <Listener className="org.apache.catalina.security.SecurityListener" />
+  -->
+  <!-- APR library loader. Documentation at /docs/apr.html -->
+  <Listener SSLEngine="on" className="org.apache.catalina.core.AprLifecycleListener"/>
+  <!-- Prevent memory leaks due to use of particular java/javax APIs-->
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener"/>
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
+  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener"/>
+
+  <!-- Global JNDI resources
+       Documentation at /docs/jndi-resources-howto.html
+  -->
+  <GlobalNamingResources>
+    <!-- Editable user database that can also be used by
+         UserDatabaseRealm to authenticate users
+    -->
+    <Resource auth="Container" description="User database that can be updated and saved" factory="org.apache.catalina.users.MemoryUserDatabaseFactory" name="UserDatabase" pathname="conf/tomcat-users.xml" type="org.apache.catalina.UserDatabase"/>
+  </GlobalNamingResources>
+
+  <!-- A "Service" is a collection of one or more "Connectors" that share
+       a single "Container" Note:  A "Service" is not itself a "Container",
+       so you may not define subcomponents such as "Valves" at this level.
+       Documentation at /docs/config/service.html
+   -->
+  <Service name="Catalina">
+
+    <!--The connectors can use a shared executor, you can define one or more named thread pools-->
+    <!--
+    <Executor name="tomcatThreadPool" namePrefix="catalina-exec-"
+        maxThreads="150" minSpareThreads="4"/>
+    -->
+
+
+    <!-- A "Connector" represents an endpoint by which requests are received
+         and responses are returned. Documentation at :
+         Java HTTP Connector: /docs/config/http.html
+         Java AJP  Connector: /docs/config/ajp.html
+         APR (HTTP/AJP) Connector: /docs/apr.html
+         Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
+    -->
+    <Connector URLEncoding="UTF-8" connectionTimeout="20000" maxParameterCount="1000" port="9090" protocol="HTTP/1.1" redirectPort="8443"/>
+    <!-- A "Connector" using the shared thread pool-->
+    <!--
+    <Connector executor="tomcatThreadPool"
+               port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443"
+               maxParameterCount="1000"
+               />
+    -->
+    <!-- Define an SSL/TLS HTTP/1.1 Connector on port 8443
+         This connector uses the NIO implementation. The default
+         SSLImplementation will depend on the presence of the APR/native
+         library and the useOpenSSL attribute of the AprLifecycleListener.
+         Either JSSE or OpenSSL style configuration may be used regardless of
+         the SSLImplementation selected. JSSE style configuration is used below.
+    -->
+    <!--
+    <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+               maxThreads="150" SSLEnabled="true"
+               maxParameterCount="1000"
+               >
+        <SSLHostConfig>
+            <Certificate certificateKeystoreFile="conf/localhost-rsa.jks"
+                         type="RSA" />
+        </SSLHostConfig>
+    </Connector>
+    -->
+    <!-- Define an SSL/TLS HTTP/1.1 Connector on port 8443 with HTTP/2
+         This connector uses the APR/native implementation which always uses
+         OpenSSL for TLS.
+         Either JSSE or OpenSSL style configuration may be used. OpenSSL style
+         configuration is used below.
+    -->
+    <!--
+    <Connector port="8443" protocol="org.apache.coyote.http11.Http11AprProtocol"
+               maxThreads="150" SSLEnabled="true"
+               maxParameterCount="1000"
+               >
+        <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
+        <SSLHostConfig>
+            <Certificate certificateKeyFile="conf/localhost-rsa-key.pem"
+                         certificateFile="conf/localhost-rsa-cert.pem"
+                         certificateChainFile="conf/localhost-rsa-chain.pem"
+                         type="RSA" />
+        </SSLHostConfig>
+    </Connector>
+    -->
+
+    <!-- Define an AJP 1.3 Connector on port 8009 -->
+    <!--
+    <Connector protocol="AJP/1.3"
+               address="::1"
+               port="8009"
+               redirectPort="8443"
+               maxParameterCount="1000"
+               />
+    -->
+
+    <!-- An Engine represents the entry point (within Catalina) that processes
+         every request.  The Engine implementation for Tomcat stand alone
+         analyzes the HTTP headers included with the request, and passes them
+         on to the appropriate Host (virtual host).
+         Documentation at /docs/config/engine.html -->
+
+    <!-- You should set jvmRoute to support load-balancing via AJP ie :
+    <Engine name="Catalina" defaultHost="localhost" jvmRoute="jvm1">
+    -->
+    <Engine defaultHost="localhost" name="Catalina">
+
+      <!--For clustering, please take a look at documentation at:
+          /docs/cluster-howto.html  (simple how to)
+          /docs/config/cluster.html (reference documentation) -->
+      <!--
+      <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster"/>
+      -->
+
+      <!-- Use the LockOutRealm to prevent attempts to guess user passwords
+           via a brute-force attack -->
+      <Realm className="org.apache.catalina.realm.LockOutRealm">
+        <!-- This Realm uses the UserDatabase configured in the global JNDI
+             resources under the key "UserDatabase".  Any edits
+             that are performed against this UserDatabase are immediately
+             available for use by the Realm.  -->
+        <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
+      </Realm>
+
+      <Host appBase="webapps" autoDeploy="true" name="localhost" unpackWARs="true">
+
+        <!-- SingleSignOn valve, share authentication between web applications
+             Documentation at: /docs/config/valve.html -->
+        <!--
+        <Valve className="org.apache.catalina.authenticator.SingleSignOn" />
+        -->
+
+        <!-- Access log processes all example.
+             Documentation at: /docs/config/valve.html
+             Note: The pattern used is equivalent to using pattern="common" -->
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
+
+      <Context docBase="k20230626_1_register" path="/k20230626_1_register" reloadable="true" source="org.eclipse.jst.jee.server:k20230626_1_register"/><Context docBase="k20230627_1_register_ajax" path="/k20230627_1_register_ajax" reloadable="true" source="org.eclipse.jst.jee.server:k20230627_1_register_ajax"/><Context docBase="k20230627_2_fetch" path="/k20230627_2_fetch" reloadable="true" source="org.eclipse.jst.jee.server:k20230627_2_fetch"/><Context docBase="k20230501_1_onLinePoll" path="/k20230501_1_onLinePoll" reloadable="true" source="org.eclipse.jst.jee.server:k20230501_1_onLinePoll"/><Context docBase="k20230623_1_ajaxboard" path="/k20230623_1_ajaxboard" reloadable="true" source="org.eclipse.jst.jee.server:k20230623_1_ajaxboard"/><Context docBase="k20230622_3_mvcBoard" path="/k20230622_3_mvcBoard" reloadable="true" source="org.eclipse.jst.jee.server:k20230622_3_mvcBoard"/><Context docBase="k20230622_2_mvcTest2" path="/k20230622_2_mvcTest2" reloadable="true" source="org.eclipse.jst.jee.server:k20230622_2_mvcTest2"/><Context docBase="k20230622_1_mvcTest" path="/k20230622_1_mvcTest" reloadable="true" source="org.eclipse.jst.jee.server:k20230622_1_mvcTest"/><Context docBase="k20230621_2_fileUpDownloadDB_multi" path="/k20230621_2_fileUpDownloadDB_multi" reloadable="true" source="org.eclipse.jst.jee.server:k20230621_2_fileUpDownloadDB_multi"/><Context docBase="k20230616_1_freeboard" path="/k20230616_1_freeboard" reloadable="true" source="org.eclipse.jst.jee.server:k20230616_1_freeboard"/><Context docBase="k20230614_1_category" path="/k20230614_1_category" reloadable="true" source="org.eclipse.jst.jee.server:k20230614_1_category"/><Context docBase="k20230620_1_fileUpload" path="/k20230620_1_fileUpload" reloadable="true" source="org.eclipse.jst.jee.server:k20230620_1_fileUpload"/><Context docBase="k20230428_1_formTag" path="/k20230428_1_formTag" reloadable="true" source="org.eclipse.jst.jee.server:k20230428_1_formTag"/><Context docBase="k20230609_1_guestbook" path="/k20230609_1_guestbook" reloadable="true" source="org.eclipse.jst.jee.server:k20230609_1_guestbook"/><Context docBase="k20230602_4_login" path="/k20230602_4_login" reloadable="true" source="org.eclipse.jst.jee.server:k20230602_4_login"/><Context docBase="k20230508_1_css" path="/k20230508_1_css" reloadable="true" source="org.eclipse.jst.jee.server:k20230508_1_css"/><Context docBase="k20230825_1_calendar_Lunar" path="/k20230825_1_calendar_Lunar" reloadable="true" source="org.eclipse.jst.jee.server:k20230825_1_calendar_Lunar"/></Host>
+    </Engine>
+  </Service>
+</Server>

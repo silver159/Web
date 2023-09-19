@@ -1,0 +1,11 @@
+127.0.0.1 - - [10/Jul/2023:10:35:17 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [10/Jul/2023:10:35:18 +0900] "GET /k20230609_1_guestbook/list.jsp HTTP/1.1" 200 22476
+0:0:0:0:0:0:0:1 - - [10/Jul/2023:10:35:18 +0900] "GET /k20230609_1_guestbook/guestbook.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [10/Jul/2023:10:35:18 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [10/Jul/2023:10:35:21 +0900] "GET /k20230609_1_guestbook/selectByIdx.jsp?idx=761&currentPage=1&job=update HTTP/1.1" 200 1667
+0:0:0:0:0:0:0:1 - - [10/Jul/2023:10:35:23 +0900] "POST /k20230609_1_guestbook/updateOK.jsp HTTP/1.1" 200 267
+0:0:0:0:0:0:0:1 - - [10/Jul/2023:10:35:24 +0900] "GET /k20230609_1_guestbook/list.jsp?currentPage=1 HTTP/1.1" 200 22476
+0:0:0:0:0:0:0:1 - - [10/Jul/2023:11:27:12 +0900] "GET /k20230609_1_guestbook/list.jsp HTTP/1.1" 200 22476
+0:0:0:0:0:0:0:1 - - [10/Jul/2023:11:27:15 +0900] "GET /k20230609_1_guestbook/selectByIdx.jsp?idx=761&currentPage=1&job=update HTTP/1.1" 200 1667
+0:0:0:0:0:0:0:1 - - [10/Jul/2023:11:31:03 +0900] "GET /k20230609_1_guestbook/list.jsp HTTP/1.1" 200 22476
+0:0:0:0:0:0:0:1 - - [10/Jul/2023:11:31:05 +0900] "GET /k20230609_1_guestbook/selectByIdx.jsp?idx=761&currentPage=1&job=update HTTP/1.1" 200 1667
